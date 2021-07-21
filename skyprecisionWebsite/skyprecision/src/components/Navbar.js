@@ -1,19 +1,23 @@
-import React from 'react'
+import React,  { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MdFingerprint } from 'react-icons/md'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import {ReactComponent as Icon } from './icon.svg'
 
-function navbar() {
+function Navbar() {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+
   return (
     <>
       <div className="navbar">
         <div className="navbar-container container">
           <Link className="navbar-logo">
-            <MdFingerprint classname='navbar-icon' />
-            Skyprecision
+            <Icon classname='navbar-icon' height='50px' width='50px'/>
+            SKYPRECISION
           </Link>
-          <div className="menu-icon">
-
+          <div className="menu-icon" onClick={handleClick}>
+            {click ? <FaTimes /> : <FaBars />}
           </div>
         </div>
       </div>
@@ -21,4 +25,4 @@ function navbar() {
   )
 }
 
-export default navbar
+export default Navbar
