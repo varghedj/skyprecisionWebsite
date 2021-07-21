@@ -19,10 +19,10 @@ export const Button = ({
     STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0]
 
   const checkButtonSize =
-    STYLES.includes(buttonSize) ? buttonStyle : SIZES[0]
+    STYLES.includes(buttonSize) ? buttonSize : SIZES[0]
 
   const checkButtonColor =
-    STYLES.includes(buttonColor) ? buttonStyle : COLOR[0]
+    STYLES.includes(buttonColor) ? buttonColor : null
 
   return (
     <button className={`btn

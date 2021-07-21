@@ -1,8 +1,9 @@
 import React,  { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import {ReactComponent as Icon } from './icon.svg'
+import Icon from './icon.svg'
 import { Button } from './Button';
+import './Navbar.css';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -23,47 +24,62 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbar">
+      <nav className="navbar">
         <div className="navbar-container container">
-          <Link className="navbar-logo">
-            <Icon classname='navbar-icon' height='50px' width='50px'/>
+          <Link className="navbar-logo" onClick={closeMobileMenu}>
+            <img className='navbar-icon'
+              src={Icon} alt='icon'
+              width='70px'
+              height='auto' />
             SKYPRECISION
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             {click ? <FaTimes /> : <FaBars />}
           </div>
-          <ul classname={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className="nav-item">
-              <Link to='/' className="nav-links">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to='/about' className="nav-links">
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to='/team' className="nav-links">
-                Team
-              </Link>
-            </li>
-            <li className="nav-btn">
-              {button ? (
-                <Link to='/log-in' className="btn-link">
-                  <Button buttonStyle='btn-outline'>LOG-IN</Button>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+              <li className='nav-item'>
+                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                  Home
                 </Link>
-              ) : (
-                <Link to='/log-in' className="btn-link">
-                  <Button buttonStyle='btn-outline' buttonSize='btn-mobile'>
-                    LOG-IN
-                  </Button>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/services'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  About
                 </Link>
-              )}
-            </li>
-          </ul>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/products'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Team
+                </Link>
+              </li>
+              <li className='nav-btn'>
+                {button ? (
+                  <Link to='/sign-up' className='btn-link'>
+                    <Button buttonStyle='btn-outline'>LOG-IN</Button>
+                  </Link>
+                ) : (
+                  <Link to='/sign-up' className='btn-link'>
+                    <Button
+                      buttonStyle='btn-outline'
+                      buttonSize='btn-mobile'
+                      onClick={closeMobileMenu}
+                    >
+                      LOG-IN
+                    </Button>
+                  </Link>
+                )}
+              </li>
+            </ul>
         </div>
-      </div>
+      </nav>
     </>
   )
 }
