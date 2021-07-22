@@ -27,11 +27,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container container">
           <Link className="navbar-logo" onClick={closeMobileMenu}>
-            <img className='navbar-icon'
-              src={Icon} alt='icon'
-              width='auto'
-              height='60px'
-              position='flex' />
+            <img className='navbar-icon' src={Icon} alt='icon'/>
             SKYPRECISION
           </Link>
           <div className="menu-icon" onClick={handleClick}>
