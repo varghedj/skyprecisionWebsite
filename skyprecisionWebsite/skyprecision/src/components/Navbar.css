@@ -120,7 +120,7 @@
   }
 
   .nav-links:hover {
-    color: #f00946;
+    color: #080808;
     transform: scale(1.2);
     transition: all 0.3s ease;
   }
@@ -137,6 +137,9 @@
     position: absolute;
     top: 0;
     left: 0;
+    /*
+    use this if the logo ever gets moved out of place somehow
+    */
     transform: translate(15%, 17%);
     object-fit: contain;
   }
