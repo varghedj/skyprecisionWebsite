@@ -8,7 +8,7 @@ export const homeObjOne = {
   headline: "Welcome to team drone team that don't use drones",
   description: 'We make grapes better by tracking the weather and stuff and it will hopefully make things better',
   imgStart: '',
-  img: '',
+  img: './images/logo192.png',
   alt: 'If you are seeing this the image is broke'
 }
 
@@ -20,6 +20,6 @@ export const homeObjTwo = {
   headline: "Welcome to team drone team that don't use drones",
   description: 'We make grapes better by tracking the weather and stuff and it will hopefully make things better',
   imgStart: '',
-  img: '',
+  img: './images/logo192.png',
   alt: 'If you are seeing this the image is broke'
 }
